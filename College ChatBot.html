@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #4c5963;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 10px;
+            margin-top: 100px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px #007bff;
+            border: 1px solid #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        @keyframes borderAnimation {
+            0% {
+                border-color: rgba(0, 0, 0, 0.1);
+            }
+
+            100% {
+                border-color: #007bff;
+            }
+        }
+
+        .summary {
+            /* text-align: center; */
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #007bff;
+            border: 1px solid #ccc;
+        }
+
+        .summary:hover {
+            background-color: #2f353a;
+            color: #d1dbe5;
+        }
+
+        .container:hover {
+            background-color: #2f353a;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="chatbot">College Chatbot</h1>
+    </div>
+    <div class="summary">
+        <div style="text-decoration: underline; color:#007bff">
+            <h3 style="text-align: center;">Overview:</h3>
+        </div>
+        <span>Welcome to our College Chatbot!</span> 
+        <span>Our chatbot is designed to assist you with a wide range of queries related to
+        our college services, facilities, academics courses, and more.</span> <br>
+        Whether you need information about admission
+        procedures, class schedules, campus events, or general inquiries, our chatbot is here to provide quick and
+        helpful responses.
+        <br>
+        <span>Simply type your question, and our chatbot will do its best to assist you promptly.</span>
+        <span>Explore
+        the convenience and efficiency of accessing college information anytime, anywhere with our intuitive chatbot
+        interface.</span>
+    </div>
+</body>
+<script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "a1df26ec-21c2-415d-b08f-1f4d1cdc285a", // The ID of this integration.
+        region: "au-syd", // The region your integration is hosted in.
+        serviceInstanceID: "9afdf6b0-dc14-4ac9-ad2c-553c08ff0e4c", // The ID of your service instance.
+        onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function () {
+        const t = document.createElement('script');
+        t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+    });
+</script>
+
+</html>
